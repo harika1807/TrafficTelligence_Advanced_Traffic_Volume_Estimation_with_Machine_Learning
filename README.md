@@ -77,7 +77,8 @@ TrafficTelligence/
 │   ├── traffic_data.csv
 │   ├── model.pkl ❗
 │   ├── scaler.pkl
-│   ├── index.html
+│   ├── templates/
+│       ├── index.html
 │
 ├── Document/
 │   └── TrafficTelligence_Documentation.pdf
