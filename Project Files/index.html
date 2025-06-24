@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TrafficTelligence - Estimate Traffic Volume</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f4f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        form {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            width: 400px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            color: #34495e;
+            font-weight: 500;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+        button {
+            margin-top: 25px;
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #27ae60;
+            text-align: center;
+        }
+        .error {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <h2>Traffic Volume Prediction</h2>
+    <form action="/predict" method="post">
+        <label>Holiday (1 = Yes, 0 = No):</label>
+        <input type="number" name="holiday" step="1" min="0" max="1" required>
+
+        <label>Temperature (°C):</label>
+        <input type="number" name="temp" step="0.1" required>
+
+        <label>Rain (mm):</label>
+        <input type="number" name="rain" step="0.1" required>
+
+        <label>Snow (mm):</label>
+        <input type="number" name="snow" step="0.1" required>
+
+        <label>Year:</label>
+        <input type="number" name="year" required>
+
+        <label>Month:</label>
+        <input type="number" name="month" min="1" max="12" required>
+
+        <label>Day:</label>
+        <input type="number" name="day" min="1" max="31" required>
+
+        <label>Hour (0 - 23):</label>
+        <input type="number" name="hour" min="0" max="23" required>
+
+        <button type="submit">Predict</button>
+
+        {% if prediction_text %}
+            <div class="result">{{ prediction_text }}</div>
+        {% endif %}
+    </form>
+</body>
+</html>
