@@ -1,6 +1,6 @@
 # 🚦 TrafficTelligence: Advanced Traffic Volume Estimation with Machine Learning
 
-![Banner]()
+![Banner](https://github.com/harika1807/TrafficTelligence_Advanced_Traffic_Volume_Estimation_with_Machine_Learning/blob/main/TrafficTelligence_Banner.png)
 
 **TrafficTelligence** is a machine learning-based web application that predicts traffic volume using environmental and temporal data. By leveraging historical patterns, it provides accurate traffic forecasts to support smart traffic control, urban planning, and commuter decision-making.
 
@@ -77,10 +77,7 @@ TrafficTelligence/
 │   ├── traffic_data.csv
 │   ├── model.pkl ❗
 │   ├── scaler.pkl
-│   ├── templates/
-│   │   └── index.html
-│   └── static/
-│       └── style.css
+│   ├── index.html
 │
 ├── Document/
 │   └── TrafficTelligence_Documentation.pdf
@@ -103,7 +100,7 @@ TrafficTelligence/
 pip install -r requirements.txt
 ```
 
-### 🧠 Train the Model (Optional)
+### 🧠 Train the Model 
 
 ```bash
 python model_training.py
